@@ -1,0 +1,45 @@
+.container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 30px 60px;
+}
+.search-line {
+  background-color: white;
+}
+.search-button {
+  position: relative;
+  margin-top: 7px;
+}
+.my-location-button {
+  position: relative;
+  margin-top: 7px;
+}
+.row {
+  padding: 0;
+}
+nav {
+  justify-content: center;
+}
+.table-row {
+  padding: 20px 0;
+}
+img {
+  justify-content: center;
+  object-fit: contain;
+  max-width: 100%;
+}
+
+#temp-C:hover {
+  transition: all 200ms ease;
+  opacity: 1;
+  color: violet;
+}
+#temp-F:hover {
+  transition: all 200ms ease;
+  opacity: 1;
+  color: violet;
+}
+a:focus {
+  text-decoration: none;
+  color: black;
+}
