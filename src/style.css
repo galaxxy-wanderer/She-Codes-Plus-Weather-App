@@ -43,3 +43,8 @@ a:focus {
   text-decoration: none;
   color: black;
 }
+
+#git-hub-rep {
+  display: block;
+  margin: 0 auto;
+}
