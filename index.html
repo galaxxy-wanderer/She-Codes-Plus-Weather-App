@@ -17,75 +17,87 @@
   </head>
   <body>
     <div class="container">
-      <div class="row table-row">
-        <div class="col-6">
-          <nav class="navbar navbar-light">
-            <form id="search-form" class="w-100">
-              <input
-                class="form-control mr-sm-2 search-line"
-                type="search"
-                placeholder="Enter a city"
-                aria-label="Search"
-                id="city-input"
-              />
-            </form>
-          </nav>
+      <div class="app-wrapper">
+        <div class="row table-row">
+          <div class="col-6">
+            <nav class="navbar navbar-light">
+              <form id="search-form" class="w-100">
+                <input
+                  class="form-control mr-sm-2 search-line"
+                  type="search"
+                  placeholder="Enter a city"
+                  aria-label="Search"
+                  id="city-input"
+                />
+              </form>
+            </nav>
+          </div>
+          <div class="col-3">
+            <button
+              id="search-button"
+              type="button"
+              class="btn btn-primary search-button w-100"
+            >
+              Search
+            </button>
+          </div>
+          <div class="col-3">
+            <button
+              id="location-button"
+              type="button"
+              class="btn btn-primary my-location-button w-100"
+            >
+              My location
+            </button>
+          </div>
         </div>
-        <div class="col-3">
-          <button
-            id="search-button"
-            type="button"
-            class="btn btn-primary search-button w-100"
+        <div class="row table-row">
+          <div class="col-4">
+            <img src="images/barcelona.jpg" />
+          </div>
+          <div
+            class="col-4 d-flex flex-column justify-content-center text-center"
           >
-            Search
-          </button>
+            <h2 id="searched-city">Barcelona</h2>
+            <h3>
+              <img src="" id="icon" /> <span id="current-temp"></span>°<sup>
+                <a href="#" id="temp-C" class="active">C</a>
+                |
+                <a href="#" id="temp-F">F</a>
+              </sup>
+            </h3>
+            <p id="precipitation"></p>
+            <p id="last-upd">
+              Last updated: <span id="current-date">Thursday 15:02</span>
+            </p>
+          </div>
+          <div class="col-4 d-flex flex-column justify-content-center">
+            <h6 class="text-center">Overview</h6>
+            <ul style="list-style-type: none">
+              <li>Wind speed: <span id="wind-speed"></span> km/h</li>
+              <li>Humidity: <span id="temp-hum"></span>%</li>
+              <li>Feels like: <span id="temp-feels"></span>°C</li>
+            </ul>
+          </div>
         </div>
-        <div class="col-3">
-          <button
-            id="location-button"
-            type="button"
-            class="btn btn-primary my-location-button w-100"
-          >
-            My location
-          </button>
+        <div class="row table-row text-center">
+          <div class="col-2">Mon</div>
+          <div class="col-2">Tue</div>
+          <div class="col-2">Wed</div>
+          <div class="col-2">Thu</div>
+          <div class="col-2">Fri</div>
+          <div class="col-2">Sat</div>
         </div>
-      </div>
-      <div class="row table-row">
-        <div class="col-4">
-          <img src="images/barcelona.jpg" />
-        </div>
-        <div
-          class="col-4 d-flex flex-column justify-content-center text-center"
-        >
-          <h2 id="searched-city">Barcelona</h2>
-          <h3>⛅ <span id="current-temp">20</span>°C</h3>
-          <p id="current-date">Thursday 15:02</p>
-        </div>
-        <div class="col-4 d-flex flex-column justify-content-center">
-          <h6 class="text-center">Overview</h6>
-          <ul style="list-style-type: none">
-            <li>Max: <span id="temp-max"></span>°C</li>
-            <li>Min: <span id="temp-min"></span>°C</li>
-            <li>Humidity: <span id="temp-hum"></span>%</li>
-            <li>Feels like: <span id="temp-feels"></span>°C</li>
-          </ul>
-        </div>
-      </div>
-      <div class="row table-row text-center">
-        <div class="col-2">Mon</div>
-        <div class="col-2">Tue</div>
-        <div class="col-2">Wed</div>
-        <div class="col-2">Thu</div>
-        <div class="col-2">Fri</div>
-        <div class="col-2">Sat</div>
       </div>
     </div>
     <div id="git-hub-rep">
-      Nadiia's
-      <a href="https://github.com/galaxxy-wanderer/She-Codes-Plus-Weather-App">
-        GitHub</a
+      <a
+        href="https://github.com/galaxxy-wanderer/She-Codes-Plus-Weather-App"
+        target="_blank"
       >
-      Repository
+        Open-source code</a
+      >
+      by Nadiia Davydovska
     </div>
     <script src="src/script.js"></script>
   </body>
