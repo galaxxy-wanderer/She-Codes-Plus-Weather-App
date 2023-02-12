@@ -73,3 +73,6 @@ a:link {
 .weather-forecast {
   text-align: center;
 }
+#city-image {
+  border-radius: 10px;
+}

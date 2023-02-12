@@ -64,11 +64,17 @@ function displayForecast(response) {
 }
 
 function getForecast(coordinates) {
-  console.log(coordinates);
   let apiKey = "535cacbb3f8a0df0aeb4790235b9541f";
   let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
-  console.log(apiUrl);
   axios.get(apiUrl).then(displayForecast);
+}
+
+function getPicture(event) {
+  event.preventDefault();
+  let cityInput = document.querySelector("#city-input");
+  let apiWiki = `https://en.wikipedia.org/w/api.php?action=query&titles=${cityInput.value}&prop=pageimages&format=json&pithumbsize=200&origin=*`;
+  axios.get(apiWiki).then(displayPicture);
+  console.log(apiWiki);
 }
 
 function showCity(event) {
@@ -76,15 +82,17 @@ function showCity(event) {
   let cityInput = document.querySelector("#city-input");
   let apiKey = "535cacbb3f8a0df0aeb4790235b9541f";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${cityInput.value}&appid=${apiKey}&&units=metric`;
-
-  console.log(apiUrl);
   axios.get(apiUrl).then(displayWeather);
 }
 let searchForm = document.querySelector("#search-form");
 searchForm.addEventListener("submit", showCity);
 
+searchForm.addEventListener("submit", getPicture);
+
 let searchButton = document.querySelector("#search-button");
 searchButton.addEventListener("click", showCity);
+
+searchButton.addEventListener("click", getPicture);
 
 function displayWeather(response) {
   tempInC.classList.add("active");
@@ -109,6 +117,17 @@ function displayWeather(response) {
   );
 
   getForecast(response.data.coord);
+}
+
+function displayPicture(response) {
+  let newImage = document.querySelector("#city-image");
+  let pagesObj = response.data.query.pages;
+  let pagesObjProps = Object.getOwnPropertyNames(pagesObj);
+  if (pagesObjProps.length >= 1) {
+    newImage.src = pagesObj[pagesObjProps[0]].thumbnail.source;
+  } else {
+    console.log("WTF! I don't understand this Wikipedia response!!!");
+  }
 }
 
 function getLocation() {
