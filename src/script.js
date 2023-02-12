@@ -144,7 +144,7 @@ function getLocation() {
 
 function addPin() {
   let newImage = document.querySelector("#city-image");
-  newImage.setAttribute("src", "images/location-pin.jpg");
+  newImage.setAttribute("src", "images/location-pin.png");
 }
 
 let locationButton = document.querySelector("#location-button");
