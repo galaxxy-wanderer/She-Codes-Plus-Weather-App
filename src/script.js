@@ -138,13 +138,19 @@ function getLocation() {
     let lon = position.coords.longitude;
     let url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&appid=${apiKey}`;
     axios.get(url).then(displayWeather);
-    let newImage = document.querySelector("#city-image");
-    newImage.setAttribute("src", "images/location-pin.png");
   }
   navigator.geolocation.getCurrentPosition(retrievePosition);
 }
+
+function addPin() {
+  let newImage = document.querySelector("#city-image");
+  newImage.setAttribute("src", "images/location-pin.png");
+}
+
 let locationButton = document.querySelector("#location-button");
 locationButton.addEventListener("click", getLocation);
+
+locationButton.addEventListener("click", addPin);
 
 function cToF(event) {
   event.preventDefault();
